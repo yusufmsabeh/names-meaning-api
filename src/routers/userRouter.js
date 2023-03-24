@@ -9,4 +9,5 @@ module.exports = (request, response) => {
     userController.getAutoComplete
   );
   Router.get("/get-meaning", request, response, userController.getMeaning);
+  Router.get("/add-meaning", request, response, userController.addMeaning);
 };
