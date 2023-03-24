@@ -9,6 +9,8 @@ exports.getAutoComplete = async (request, response, next) => {
   const filteredNames = names.filter((name) =>
     name.toLowerCase().includes(queryAutoComplete)
   );
-  response.writeHead(200);
+  response.writeHead(200, {
+    "Content-Type": "application/json",
+  });
   response.end(JSON.stringify({ names: filteredNames }));
 };
