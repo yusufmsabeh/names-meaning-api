@@ -4,14 +4,13 @@ const nameList = document.createElement("ul");
 const nameDesc = document.createElement("div");
 nameDesc.classList.add("name-desc");
 const nameRequest = (query) => {
-  const url = `/autocomplete?q=${query}`;
+  const url = `/auto-complete?q=${query}`;
   myFetch(url, (response) => {
     nameList.classList.add("links");
     nameList.textContent = "";
     nameDesc.textContent = "";
     nameDesc.remove();
-
-    response.forEach((ele) => {
+    response.names.forEach((ele) => {
       const nameItem = document.createElement("li");
       const nameLink = document.createElement("a");
       nameLink.className = "link";
