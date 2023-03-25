@@ -1,16 +1,16 @@
 exports.get = (path, request, response, method, isSent) => {
   if (request.url.includes(path) && request.method == "GET" && !isSent) {
     method(request, response);
-    return true;
+    isSent = true;
   }
-  return false;
+  return isSent;
 };
 exports.post = (path, request, response, method, isSent) => {
   if (request.url.includes(path) && request.method == "POST" && !isSent) {
     method(request, response);
-    return true;
+    isSent = true;
   }
-  return false;
+  return isSent;
 };
 
 exports.notFound = (request, response, isSent) => {
