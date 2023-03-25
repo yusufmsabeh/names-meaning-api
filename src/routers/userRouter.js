@@ -2,7 +2,6 @@ const Router = require("../util/route");
 const userController = require("../controlers/userControler");
 
 module.exports = (request, response) => {
-  console.log("request");
   let isSent = false;
   isSent = Router.get(
     "/auto-complete",
@@ -11,7 +10,6 @@ module.exports = (request, response) => {
     userController.getAutoComplete,
     isSent
   );
-  console.log(isSent);
   isSent = Router.get(
     "/get-meaning",
     request,
