@@ -2,12 +2,27 @@ const Router = require("../util/route");
 const userController = require("../controlers/userControler");
 
 module.exports = (request, response) => {
-  Router.get(
+  let isSent = false;
+  isSent = Router.get(
     "/auto-complete",
     request,
     response,
-    userController.getAutoComplete
+    userController.getAutoComplete,
+    isSent
   );
-  Router.get("/get-meaning", request, response, userController.getMeaning);
-  Router.get("/add-meaning", request, response, userController.addMeaning);
+  isSent = Router.get(
+    "/get-meaning",
+    request,
+    response,
+    userController.getMeaning,
+    isSent
+  );
+  isSent = Router.post(
+    "/add-meaning",
+    request,
+    response,
+    userController.addMeaning,
+    isSent
+  );
+  Router.notFound(request, response, isSent);
 };
