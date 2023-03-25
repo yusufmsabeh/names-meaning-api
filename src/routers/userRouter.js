@@ -17,5 +17,12 @@ module.exports = (request, response) => {
     userController.getMeaning,
     isSent
   );
+  isSent = Router.post(
+    "/add-meaning",
+    request,
+    response,
+    userController.addMeaning,
+    isSent
+  );
   Router.notFound(request, response, isSent);
 };
