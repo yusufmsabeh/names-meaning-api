@@ -21,7 +21,7 @@ const nameRequest = (query) => {
       body.append(nameList);
 
       nameLink.addEventListener("click", () => {
-        myFetch(`/selected?q=${nameLink.textContent}`, (data) =>
+        myFetch(`/get-meaning?name=${nameLink.textContent}`, (data) =>
           showMeaning(data, nameLink.textContent)
         );
       });
@@ -30,7 +30,7 @@ const nameRequest = (query) => {
 };
 const showMeaning = (data, name) => {
   const par = document.createElement("p");
-  par.textContent = JSON.stringify(data[0][name]);
+  par.textContent = JSON.stringify(data.name);
   nameDesc.append(par);
   body.append(nameDesc);
 };

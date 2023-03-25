@@ -16,13 +16,14 @@ exports.getAutoComplete = (request, response) => {
 };
 exports.getMeaning = (request, response) => {
   const requestURL = new URL(`http://local:3000${request.url}`);
-  const query = requestURL.searchParams.get("name");
+  const query = requestURL.searchParams.get("name").toLowerCase().trim();
   const myNameMeaning = JSON.stringify(means[query]);
-  response.writeHead(200, { "Content-Type": "text/html" });
-  response.end(myNameMeaning);
+  response.writeHead(200, { "Content-Type": "application/json" });
+  response.end(JSON.stringify({ name: means[query] }));
 };
 
 exports.addMeaning = (request, response) => {
+  console.log("add meaning");
   const requestUrl = new URL(`http://localhost:300${request.url}`);
   const name = (requestUrl.searchParams.get("name") || "").toLowerCase().trim();
   const meaning = (requestUrl.searchParams.get("meaning") || "")
