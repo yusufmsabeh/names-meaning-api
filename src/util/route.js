@@ -1,6 +1,5 @@
 exports.get = (path, request, response, method, isSent) => {
   if (request.url.includes(path) && request.method == "GET" && !isSent) {
-    console.log("send get");
     method(request, response);
     isSent = true;
   }
