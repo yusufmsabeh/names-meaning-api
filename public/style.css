@@ -1,0 +1,133 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background: #07051a;
+}
+
+div.container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  width: 50px;
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+.container:hover,
+.container:valid {
+  width: 200px;
+  cursor: pointer;
+}
+
+.container:hover input,
+.container:valid input {
+  display: block;
+}
+
+.container:hover .fa,
+.container:valid .fa {
+  background: #07051a;
+  color: white;
+}
+
+.container:valid a {
+  display: block;
+}
+/* elements from dom */
+.name-desc {
+  width: 68%;
+  margin: auto;
+  font-size: 18px;
+  background: #eee;
+  padding: 16px;
+  text-align: center;
+  direction: rtl;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  margin-bottom: 3rem;
+}
+
+.links {
+  width: 900px;
+  background: #eee;
+  margin: auto;
+  list-style: none;
+  margin-bottom: 3rem;
+}
+.links ul {
+  position: absolute;
+  background: #171c24;
+  top: 80px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.links li {
+  padding: 12px;
+}
+.links li:hover > ul {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.links li a {
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  text-decoration: none;
+  color: #000;
+  /* border-radius: 0px!important; */
+}
+.links ul ul {
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 8px);
+}
+.links ul li {
+  position: relative;
+}
+.links ul li:hover ul {
+  top: 0;
+}
