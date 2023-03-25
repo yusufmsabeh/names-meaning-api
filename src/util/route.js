@@ -14,7 +14,6 @@ exports.post = (path, request, response, method, isSent) => {
 };
 
 exports.notFound = (request, response, isSent) => {
-  console.log("not found");
   if (!isSent) {
     response.writeHead(404, {
       "content-type": "application/text",

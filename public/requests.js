@@ -6,7 +6,6 @@ const myFetch = (url, cb) => {
       cb(response);
     }
   };
-  xhr.open("GET", `http://localhost:3000${url}`, true);
-  xhr.setRequestHeader("access-control-allow-origin", "*");
+  xhr.open("GET", url, true);
   xhr.send();
 };
