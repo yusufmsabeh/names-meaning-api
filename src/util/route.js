@@ -1,19 +1,21 @@
 exports.get = (path, request, response, method, isSent) => {
   if (request.url.includes(path) && request.method == "GET" && !isSent) {
+    console.log("send get");
     method(request, response);
-    return true;
+    isSent = true;
   }
-  return false;
+  return isSent;
 };
 exports.post = (path, request, response, method, isSent) => {
   if (request.url.includes(path) && request.method == "POST" && !isSent) {
     method(request, response);
-    return true;
+    isSent = true;
   }
-  return false;
+  return isSent;
 };
 
 exports.notFound = (request, response, isSent) => {
+  console.log("not found");
   if (!isSent) {
     response.writeHead(404, {
       "content-type": "application/text",
