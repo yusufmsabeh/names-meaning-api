@@ -185,6 +185,9 @@ main {
   margin-top: -1rem;
   opacity: 0;
   width: 1rem;
+  max-height: 10rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 1rem;
   border-radius: 0rem 0rem 1rem 1rem;
   transition: 800ms;
