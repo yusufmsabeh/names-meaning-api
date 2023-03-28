@@ -156,6 +156,7 @@ main {
   border-radius: 2rem;
   padding: 0.5rem;
   transition: 1500ms;
+  z-index: 100;
 }
 .search-input {
   display: inline;
@@ -181,6 +182,7 @@ main {
 
 .auto-complete-container {
   background-color: white;
+  margin-top: -1rem;
   opacity: 0;
   width: 1rem;
   padding: 1rem;
@@ -197,25 +199,11 @@ main {
   margin-top: 1rem;
 }
 
-.name-desc {
-  width: 68%;
-  margin: auto;
-  font-size: 18px;
-  background: #eee;
-  padding: 16px;
-  text-align: center;
-  direction: rtl;
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-  margin-bottom: 3rem;
-}
-
 a {
   text-decoration: none;
   color: #07051a;
   font-weight: bold;
   font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  padding: 0.5rem;
 }
