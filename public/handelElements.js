@@ -1,8 +1,13 @@
 const searchInput = document.querySelector("input");
 const body = document.querySelector("body");
 const nameList = document.createElement("ul");
+const autoCompleteContainerHandel = document.querySelector(
+  ".auto-complete-container"
+);
+const main = document.querySelector("main");
+
 const nameDesc = document.createElement("div");
-nameDesc.classList.add("name-desc");
+nameDesc.classList.add("result");
 const nameRequest = (query) => {
   const url = `/auto-complete?q=${query}`;
   myFetch(url, (response) => {
@@ -18,7 +23,7 @@ const nameRequest = (query) => {
       nameItem.append(nameLink);
       nameLink.setAttribute("href", "#");
       nameList.append(nameItem);
-      body.append(nameList);
+      autoCompleteContainerHandel.append(nameList);
 
       nameLink.addEventListener("click", () => {
         myFetch(`/get-meaning?name=${nameLink.textContent}`, (data) =>
@@ -30,9 +35,10 @@ const nameRequest = (query) => {
 };
 const showMeaning = (data, name) => {
   const par = document.createElement("p");
-  par.textContent = JSON.stringify(data.name);
+  par.textContent = data.name;
+  nameDesc.textContent = "";
   nameDesc.append(par);
-  body.append(nameDesc);
+  main.append(nameDesc);
 };
 searchInput.addEventListener("input", () => {
   if (searchInput.value.trim() == "") {

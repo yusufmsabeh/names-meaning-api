@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 exports.getStaticFile = (request, response, endpoint) => {
+  console.log(endpoint);
   const extensionType = {
     ".html": "text/html",
     ".css": "text/css",

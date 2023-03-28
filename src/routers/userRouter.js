@@ -26,6 +26,13 @@ module.exports = (request, response) => {
     isSent
   );
   isSent = Router.get(
+    "/app.js",
+    request,
+    response,
+    publicController.getStaticFiles,
+    isSent
+  );
+  isSent = Router.get(
     "/auto-complete",
     request,
     response,
