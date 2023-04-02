@@ -5,6 +5,12 @@ const autoCompleteContainer = document.querySelector(
 const searchInputElement = document.querySelector(".search-input");
 const searchIcon = document.querySelector(".search-icon");
 const bodyElement = document.querySelector("body");
+// add button
+const addButton = document.querySelector(".add-button-container");
+const addForm = document.querySelector(".add-form");
+const inputs = document.querySelectorAll(".add-form input");
+const labels = document.querySelectorAll(".add-form label");
+const button = document.querySelector(".add-form button");
 
 bodyElement.addEventListener("click", hideSearch);
 
@@ -52,4 +58,28 @@ function hideSearch() {
     autoCompleteContainer.style.width = "1rem";
     autoCompleteContainer.style.padding = "1rem";
   }
+}
+
+let isDisplayed = false;
+addButton.addEventListener("click", () =>
+  isDisplayed ? hideAddForm() : showAddForm()
+);
+
+function showAddForm() {
+  console.log("showing");
+  addForm.style.width = "fit-content";
+  addForm.style.padding = "0.5rem";
+  labels.forEach((element) => (element.style.display = "inline"));
+  inputs.forEach((element) => (element.style.display = "inline"));
+  button.style.display = "inline";
+  isDisplayed = true;
+}
+
+function hideAddForm() {
+  addForm.style.width = "0px";
+  addForm.style.padding = "0px";
+  labels.forEach((element) => (element.style.display = "none"));
+  inputs.forEach((element) => (element.style.display = "none"));
+  button.style.display = "none";
+  isDisplayed = false;
 }
