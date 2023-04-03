@@ -1,4 +1,9 @@
-const searchInput = document.querySelector("input");
+const searchInput = document.querySelector(".search-container input");
+
+const addButtonSubmit = document.querySelector(".add-form button");
+const nameInput = document.getElementById("name");
+const meaningInput = document.getElementById("meaning");
+
 const body = document.querySelector("body");
 const nameList = document.createElement("ul");
 const autoCompleteContainerHandel = document.querySelector(
@@ -53,4 +58,12 @@ document.addEventListener("click", (ele) => {
     console.log(ele.target.textContent);
     searchInput.value = ele.target.textContent;
   }
+});
+
+addButtonSubmit.addEventListener("click", () => {
+  const name = nameInput.value;
+  const meaning = meaningInput.value;
+  const url = `/add-meaning?name=${name}&meaning=${meaning}`;
+  myFetch(url, null, "POST");
+  window.location.reload();
 });
