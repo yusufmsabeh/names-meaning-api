@@ -1,37 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-      crossorigin="anonymous"
-    />
-    <title>MJ git my meaning</title>
-  </head>
-  <body>
-    <div class="container">
-      <input
-        type="search"
-        class="search-input"
-        name="searchName"
-        placeholder="Search here..."
-        required
-      />
-      <i class="fa fa-search"></i>
-    </div>
-
-
-
-    <script src="requests.js"></script>
-    <script src="handelElements.js"></script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,6 +21,20 @@
     <title>Names</title>
   </head>
   <body>
+    <header>
+      <div class="add-form">
+        <form method="post">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+          <label for="meaning">Meaning:</label>
+          <input type="text" name="meaning" id="meaning" />
+          <button type="button">ADD</button>
+        </form>
+      </div>
+      <div class="add-button-container">
+        <i class="fa-sharp fas fa-plus add-icon"></i>
+      </div>
+    </header>
     <main>
       <div class="search-container">
         <input type="text" class="search-input" />

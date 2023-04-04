@@ -1,4 +1,4 @@
-const myFetch = (url, cb) => {
+const myFetch = (url, cb, method = "GET") => {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if (xhr.status == 200 && xhr.readyState == 4) {
@@ -6,6 +6,6 @@ const myFetch = (url, cb) => {
       cb(response);
     }
   };
-  xhr.open("GET", url, true);
+  xhr.open(method, url, true);
   xhr.send();
 };
